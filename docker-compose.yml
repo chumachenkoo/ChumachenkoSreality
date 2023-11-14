@@ -1,0 +1,21 @@
+version: '3'
+services:
+  chumachenkosreality-web:
+    build: .
+    ports:
+      - "8080:8080"  # Map host port 8080 to container port 8080
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      - FLASK_ENV=development  # Set Flask environment to development (change for production)
+    depends_on:
+      - db  # Ensure that the database container is started first
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: scrapy_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"  # Map host port 5432 to container port 5432
