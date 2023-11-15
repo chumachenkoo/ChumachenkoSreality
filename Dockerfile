@@ -1,22 +1,18 @@
-# Use the official Python image as the base image
-FROM python:3.8
+FROM python:3.10
 
-# Set environment variables (customize as needed)
-ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=localhost
-ENV FLASK_RUN_PORT=8080
+COPY ./requirements.txt /app/requirements.txt
 
-# Set the working directory in the container
+
 WORKDIR /app
 
-# Copy the application code to the container
-COPY . /app
 
-# Install dependencies
 RUN pip install -r requirements.txt
 
-# Expose the port where the Flask app will run
+COPY . /app
+
 EXPOSE 8080
 
-# Command to run the Flask app
-CMD ["flask", "run", "--host=localhost", "--port=8080"]
+ENV PATH="${PATH}:/app"
+ENV PYTHONPATH="/app"
+
+CMD [ "python3", "scrapy_project/app.py" ]
