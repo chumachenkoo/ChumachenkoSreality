@@ -93,5 +93,5 @@ TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
 ITEM_PIPELINES = {
-    'scrapy_project.pipelines.ScrapyProjectPipeline': 300,
+    'pipelines.ScrapyProjectPipeline': 300,
 }

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import database
-import subprocess
+from scrapy_project.scrapy_project.spiders import sreality_spider
 
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ db_manager = database.DatabaseManager(
 db_manager.create_database()
 db_manager.create_table_if_doesnt_exist()
 db_manager.delete_all_items()
-subprocess.run(['python3', 'scrapy_project/spiders/sreality_spider.py'])
+sreality_spider.launch()
 
 PER_PAGE = 25
 
@@ -35,4 +35,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8080)
+    app.run(debug=True, port=5050)

@@ -1,4 +1,4 @@
-from .database import DatabaseManager
+from database import DatabaseManager
 
 
 class ScrapyProjectPipeline:

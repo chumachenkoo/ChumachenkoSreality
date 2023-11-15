@@ -1,5 +1,5 @@
 import scrapy
-from scrapy_project.items import ScrapyProjectItem
+from items import ScrapyProjectItem
 from scrapy.crawler import CrawlerProcess
 
 
@@ -18,8 +18,12 @@ class SrealitySpiderSpider(scrapy.Spider):
             yield ScrapyProjectItem(name=item['name'], image=current_img)
 
 
-if __name__ == "__main__":
+def launch():
     settings = {'ITEM_PIPELINES': {'scrapy_project.pipelines.ScrapyProjectPipeline': 300}}
     process = CrawlerProcess(settings)
     process.crawl(SrealitySpiderSpider)
     process.start()
+
+
+if __name__ == "__main__":
+    launch()
