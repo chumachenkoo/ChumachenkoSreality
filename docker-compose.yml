@@ -14,14 +14,8 @@ services:
   chumachenkosreality-web:
     build: .
     ports:
-      - "5055:5055"
+      - "8080:8080"
     environment:
       - FLASK_ENV=development
     depends_on:
       - db
-
-#  adminer:
-#    image: adminer
-#    restart: always
-#    expose:
-#      - "5055"
