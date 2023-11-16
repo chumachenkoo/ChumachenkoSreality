@@ -8,7 +8,7 @@ class SrealitySpiderSpider(scrapy.Spider):
     allowed_domains = ['sreality.cz']
     start_urls = [
         f'https://www.sreality.cz/api/cs/v2/estates?category_main_cb=1&category_type_cb=1&sort=0&per_page=100&page={page}'
-        for page in range(1, 6)
+        for page in range(1, 2)
     ]
 
     def parse(self, response):

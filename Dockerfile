@@ -15,4 +15,4 @@ EXPOSE 8080
 ENV PATH="${PATH}:/app"
 ENV PYTHONPATH="/app"
 
-CMD [ "python3", "scrapy_project/app.py" ]
+CMD [ "python", "scrapy_project/app.py" ]

@@ -9,9 +9,10 @@ db_manager = database.DatabaseManager(
     dbname="scrapy_db",
     user="postgres",
     password="postgres",
-    host="localhost",
+    host="db",
     port="5432"
 )
+
 db_manager.create_database()
 db_manager.create_table_if_doesnt_exist()
 db_manager.delete_all_items()
@@ -35,4 +36,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5050)
+    app.run(debug=True, host='0.0.0.0', port=5055)

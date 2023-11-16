@@ -120,15 +120,19 @@ class DatabaseManager:
             print("An error occurred:", e)
 
 
-if __name__ == "__main__":
+
+def launch():
     db_manager = DatabaseManager(
         dbname="scrapy_db",
         user="postgres",
         password="postgres",
-        host="localhost",
+        host="db",
         port="5432"
     )
 
     db_manager.create_database()
-    db_manager.create_table_if_doesnt_exist()
+
+
+if __name__ == "__main__":
+    launch()
 

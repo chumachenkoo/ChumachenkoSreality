@@ -8,7 +8,7 @@ class ScrapyProjectPipeline:
             dbname="scrapy_db",
             user="postgres",
             password="postgres",
-            host="localhost",
+            host="db",
             port="5432"
         )
         db_manager.insert_item(name, image)
