@@ -23,7 +23,3 @@ def launch():
     process = CrawlerProcess(settings)
     process.crawl(SrealitySpiderSpider)
     process.start()
-
-
-if __name__ == "__main__":
-    launch()
